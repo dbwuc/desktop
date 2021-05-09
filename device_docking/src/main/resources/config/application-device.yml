@@ -1,0 +1,57 @@
+spring:
+  #db
+  datasource:
+    #测试环境
+    #url: jdbc:mysql://10.10.100.180:3306/SRBSH_device_test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+    #正式环境
+    #url: jdbc:mysql://118.178.136.118:3306/ceShiKu?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+    #本机
+    url: jdbc:mysql://localhost:3306/srbsh_device_test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: HC@3018
+
+#集成平台地址
+  webUrl: http://CIS.shpec.cn:50000/sap/bc/srt/wsdl/srvc_000C2911DDE31ED8B6850FAC417EC0CD/wsdl11/allinone/standard/document?sap-client=800
+
+#平台参数
+  # 系统编码
+  Appid: "PRD800"
+  #系统名称
+  Appname: "调用系统"
+  #业务标识
+  Busid: Guid.NewGuid().ToString().Replace("-","")
+  # 压缩方式
+  Compressiontype: ""
+  # 加密方式
+  Encryptiontype: ""
+  # 客户端IP
+  Ip: "10.14.13.122"
+  # 是否压缩
+  Iscompression: "0"
+  # 是否加密
+  Isencryption: "0"
+  # 0-json;1-xml
+  MainFormart: "0"
+  # 数据内容
+  MainString: ""
+  # 调用平台密码
+  Password: "14082414"
+  Remark: "测试系统备注"
+  # 服务方系统编码
+  Serviceappid: "PSSCT0"
+  # 服务方系统名称
+  Serviceappname: "测试系统"
+  # 功能号
+  Servicemodule: "000_000_0000"
+  #//功能名称
+  Servicemodulename: "PSSCT0测试系统"
+  # 服务密码
+  Servicepassword: ""
+  # 服务用户名
+  Serviceusername: ""
+  # 工号
+  Userid: "50101010"
+  # 调用平台IDwsuser
+  Username: "RFCWEB"
+  # 版本号
+  Version: "version1.0"

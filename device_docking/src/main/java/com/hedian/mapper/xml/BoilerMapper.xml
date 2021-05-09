@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hedian.mapper.BoilerMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+    <update id="updateBoilersByTimeAndId" parameterType="java.util.List">
+        <foreach collection="list.boilerStream" item="item" index="index" open="" close="" separator=";">
+            update flow_nv_special_equipment_boiler
+            <set>
+                id=#{item.id},
+                department_id=#{item.departmentId},
+                DWNBBH=#{item.dwnbbh},
+                GLMC=#{item.glmc},
+                GLXH=#{item.glxh},
+                GLFLX=#{item.glflx},
+                GLZL=#{item.glzl},
+                GLPZ=#{item.glpz},
+                GLYT=#{item.glyt},
+                SZDD=#{item.szdd},
+                LXDH=#{item.lxdh},
+                CCBH=#{item.ccbh},
+                SBZT=#{item.sbzt},
+                SYZT=#{item.syzt},
+                TYRQ=#{item.tyrq},
+                ZCZT=#{item.zczt},
+                YZCDM=#{item.yzcdm},
+                ZGBMMC=#{item.zgbmmc},
+                ZGBMBH=#{item.zgbmbh},
+                ZCYZ=#{item.zcyz},
+                ZCJZ=#{item.zcjz},
+                SFDZGL=#{item.sfdzgl},
+                del_flag=#{item.delFlag},
+                use_flag=#{item.useFlag},
+                create_id=#{item.createId},
+                create_time=#{item.createTime},
+                modified_id=#{item.modifiedId},
+                modified_time=#{item.modifiedTime},
+            </set>
+            where id in
+            <foreach collection="list.streamIds" item="id" index="index" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </foreach>
+    </update>
+</mapper>

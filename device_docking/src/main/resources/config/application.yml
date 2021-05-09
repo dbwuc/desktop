@@ -1,0 +1,33 @@
+server:
+  port: 9112
+  tomcat:
+    uri-encoding: UTF-8
+    servlet:
+      context-path: /device_docking
+
+spring:
+  #environment config
+  profiles:
+    active: device
+    include: mybatis-plus
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 5
+      max-wait: 20000
+
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: com.hedian.device_docking.dao
+
+#log config
+logging:
+  config: classpath:config/logback-spring.xml
+  level:
+    root: info
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+  path: logs/
+  file: device.log
+  userLogFlag: true
